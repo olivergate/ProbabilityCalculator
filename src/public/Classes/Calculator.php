@@ -17,7 +17,12 @@ class Calculator
         $this->probFunction = new $function($this->inputs);
     }
 
-    public function evaluate()
+    public function getResult()
+    {
+        return $this->probFunction->getCalcResult();
+    }
+
+    public function logArrayFetch()
     {
         return $this->probFunction->logArray();
     }
