@@ -6,7 +6,7 @@ class CombinedWith
 {
     use \validateInputProbTrait;
 
-    private $calcresult;
+    private $calcResult;
     private $inputs;
     private $outputs;
 
@@ -23,19 +23,19 @@ class CombinedWith
         for ($i=1; $i<$arrayLength; $i++){
             $result *= $array[$i];
         }
-        return $this->calcresult = $result;
+        return $this->calcResult = $result;
     }
 
     /**
      * @return mixed
      */
-    public function getCalcresult()
+    public function getCalcResult()
     {
-        return $this->calcresult;
+        return $this->calcResult;
     }
 
-    public function __toString()
+    public function logArray() : array
     {
-        return "Funation Name: " . __FUNCTION__ .  "Inputs: " . $array . "Output: " . $;
+        return ['Date' => date('Y/m/d/h/i/s'), 'Function Name: ' => __FUNCTION__,  'Inputs: ' => $this->inputs,  'Output: ' => $this->outputs];
     }
 }
