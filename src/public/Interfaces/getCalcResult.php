@@ -2,10 +2,10 @@
 
 namespace pub\Interfaces;
 
-interface getCalc
+interface getCalcResult
 {
     /**
      * @return mixed
      */
-    public function getCalc();
+    public function getCalcResult();
 }

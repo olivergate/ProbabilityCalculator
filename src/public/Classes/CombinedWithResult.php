@@ -2,9 +2,13 @@
 
 namespace pub\Classes;
 
-class CombinedWith
+use pub\Interfaces\getCalcResult;
+use pub\Interfaces\getInputs;
+
+class CombinedWith implements getCalcResult, getInputs
 {
-    use \validateInputProbTrait;
+    use \pub\Traits\validateInputProbTrait;
+    use \pub\Traits\logArrayTrait;
 
     private $calcResult;
     private $inputs;
@@ -15,9 +19,7 @@ class CombinedWith
         $this->validateInputProbabilities($inputs);
         $this->inputs = $inputs;
         $this->calcResult = $this->calc($inputs);
-
     }
-
 
     public function calc($array) : array {
         $result = $array[0];
@@ -35,5 +37,15 @@ class CombinedWith
     {
         return $this->calcResult;
     }
+
+    /**
+     * @return array
+     */
+    public function getInputs(): array
+    {
+        return $this->inputs;
+    }
+
+
 
 }
