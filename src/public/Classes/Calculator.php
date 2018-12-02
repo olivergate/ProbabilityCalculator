@@ -1,28 +1,25 @@
 <?php
-
 namespace pub\Classes;
-
-use pub\Traits\logArrayTrait;
 
 class Calculator
 {
-    private $function;
+    private $probFunction;
     private $inputs;
 
-    public function __construct($inputs = array())
+    public function getUserInputs(array $inputs)
     {
-        $this->inputs = $inputs;
+        return $this->inputs = $inputs;
     }
 
-
-    public function setFunctionName(logArrayTrait $function) : void
+    public function setFunction($function) : void
     {
-        $this->function = new $function($this->inputs);
+        $function = 'pub\\Classes\\' . $function;
+        $this->probFunction = new $function($this->inputs);
     }
 
     public function evaluate()
     {
-        return $this->function->logArray($this->inputs);
+        return $this->probFunction->logArray();
     }
 
 }
