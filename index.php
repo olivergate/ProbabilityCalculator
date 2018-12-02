@@ -1,9 +1,10 @@
 <?php
+require_once "vendor/autoload.php";
 ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="src/public/css/style.css"/>
     <title>Probability Calculator</title>
 </head>
 <body>
