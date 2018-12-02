@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+}
+
+.left_column {
+    width: 49%;
+    float: left;
+    border-radius: 5px;
+}
+
+.right_column {
+    width: 50%;
+    float: right;
+}
+
+.inputs {
+    height: 200px;
+    background-color: indianred;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.outputs {
+    height: 300px;
+    background-color: indianred;
+    border-radius: 5px;
+}
+
+.log_book {
+    height: 520px;
+    background-color: indianred;
+    border-radius: 5px;
+}
