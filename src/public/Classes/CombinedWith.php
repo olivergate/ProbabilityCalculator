@@ -1,6 +1,6 @@
 <?php
 
-namespace Classes;
+namespace pub\Classes;
 
 class CombinedWith
 {
@@ -14,12 +14,14 @@ class CombinedWith
     {
         $this->validateInputProbabilities($inputs);
         $this->inputs = $inputs;
+        $this->calcResult = $this->calc($inputs);
+
     }
 
 
-    public function Calc($array) : array {
+    public function calc($array) : array {
         $result = $array[0];
-        $arrayLength = count($array);
+        $arrayLength = \count($array);
         for ($i=1; $i<$arrayLength; $i++){
             $result *= $array[$i];
         }
@@ -36,6 +38,6 @@ class CombinedWith
 
     public function logArray() : array
     {
-        return ['Date' => date('Y/m/d/h/i/s'), 'Function Name: ' => __FUNCTION__,  'Inputs: ' => $this->inputs,  'Output: ' => $this->outputs];
+        return $this->outputs = ['Date' => date('Y/m/d/h/i/s'), 'Function Name: ' => __FUNCTION__,  'Inputs: ' => $this->inputs,  'Output: ' => $this->outputs];
     }
 }

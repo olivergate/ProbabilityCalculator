@@ -4,7 +4,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Classes\\":"src/public/Classes"
+      "pub\\":"src/public"
     }
   }
 }
