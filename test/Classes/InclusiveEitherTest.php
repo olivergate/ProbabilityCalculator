@@ -1,45 +1,49 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: academy
+ * Date: 03/12/2018
+ * Time: 11:18
+ */
 
-use pub\Classes\CombinedWith;
+use pub\Classes\InclusiveEither;
 
-class CombinedWithTest extends PHPUnit_Framework_TestCase
+class InclusiveEitherTest extends PHPUnit_Framework_TestCase
 {
+
     public function testConstructSuccess() : void
     {
         $array = [0.1, 0.1];
-        $case = new CombinedWith($array);
-        $expected = CombinedWith::class;
-
+        $case = new InclusiveEither($array);
+        $expected = InclusiveEither::class;
         $this->assertInstanceOf($expected, $case);
     }
     public function testConstructFailure() : void {
         $this->expectException(UnexpectedValueException::class);
         $array = [2, 0.1];
-        new CombinedWith($array);
+        new InclusiveEither($array);
     }
 
     public function testConstructNegativeNumberFailure() : void {
         $this->expectException(UnexpectedValueException::class);
         $array = [-0.1, 0.1];
-        new CombinedWith($array);
+        new InclusiveEither($array);
     }
 
     public function testSuccessCalc() : void {
         $array = [0.1, 0.1];
-        $combined = new CombinedWith($array);
+        $either = new InclusiveEither($array);
 
-        $case = $combined->calc($array);
-        $expected = 0.01;
+        $case = $either->calc($array);
+        $expected = 0.19;
         $this->assertEquals($expected, $case);
     }
-
-
 
     public function testIncorrectInputCalc() : void  {
         $this->expectException(UnexpectedValueException::class);
         $array = [1.1, 0.1];
-        $combined = new CombinedWith($array);
-        $case = $combined->calc($array);
+        $either = new InclusiveEither($array);
+        $case = $either->calc($array);
         $expected = 0.01;
         $this->assertEquals($expected, $case);
     }
