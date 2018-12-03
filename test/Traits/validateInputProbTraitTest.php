@@ -1,8 +1,11 @@
 <?php
 
+require_once '../../vendor/autoload.php';
+
+use PHPUnit\Framework\TestCase;
 use pub\Traits\validateInputProbTrait;
 
-class validateInputProbTraitTest extends \PHPUnit_Framework_TestCase
+class validateInputProbTraitTest extends TestCase
 {
     public function validateInputProbabilitiesSuccesTest() : void
     {

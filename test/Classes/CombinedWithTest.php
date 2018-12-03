@@ -1,14 +1,15 @@
 <?php
-
+require_once '../../vendor/autoload.php';
+use PHPUnit\Framework\TestCase;
 use pub\Classes\CombinedWith;
 
-class CombinedWithTest extends PHPUnit_Framework_TestCase
+class CombinedWithTest extends TestCase
 {
     public function testConstructSuccess() : void
     {
         $array = [0.1, 0.1];
-        $case = new CombinedWith($array);
-        $expected = CombinedWith::class;
+        $case = new  CombinedWith($array);
+        $expected = pub\Classes\CombinedWith::class;
         $this->assertInstanceOf($expected, $case);
     }
     public function testConstructFailure() : void {

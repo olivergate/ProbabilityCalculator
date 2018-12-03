@@ -1,14 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: academy
- * Date: 03/12/2018
- * Time: 11:18
- */
 
+require_once '../../vendor/autoload.php';
+
+use PHPUnit\Framework\TestCase;
 use pub\Classes\InclusiveEither;
 
-class InclusiveEitherTest extends PHPUnit_Framework_TestCase
+class InclusiveEitherTest extends TestCase
 {
 
     public function testConstructSuccess() : void
