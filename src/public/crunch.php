@@ -3,6 +3,7 @@ namespace pub;
 
 use pub\Classes\Calculator;
 
+
 if (isset($_POST['input1'], $_POST['input2'], $_POST['input1'])) {
     //Assigning variables for readability.
     $inputs = array((float) $_POST['input1'], (float) $_POST['input2']);
@@ -15,7 +16,7 @@ if (isset($_POST['input1'], $_POST['input2'], $_POST['input1'])) {
         //fires off the calculation.
         $calculator->setFunction($function);
     } catch (\UnexpectedValueException $exception) {
-        header('Location: /Redington/Redington?invalid=1');
+        header('Location: ?invalid=1');
     }
     //stores the result for use on front end
     $result = $calculator->getResult();
