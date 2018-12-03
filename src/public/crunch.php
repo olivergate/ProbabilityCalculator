@@ -1,8 +1,7 @@
 <?php
 namespace pub;
 
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
+use pub\Classes\Calculator;
 
 if (isset($_POST['input1'], $_POST['input2'], $_POST['input1'])) {
     //Assigning variables for readability.
@@ -10,7 +9,7 @@ if (isset($_POST['input1'], $_POST['input2'], $_POST['input1'])) {
     $function = $_POST['Function'];
 
     //Instantiating calculator and populating it with user data.
-    $calculator = new \pub\Classes\Calculator();
+    $calculator = new Calculator();
     $calculator->getUserInputs($inputs);
     try {
         //fires off the calculation.
@@ -22,8 +21,6 @@ if (isset($_POST['input1'], $_POST['input2'], $_POST['input1'])) {
     $result = $calculator->getResult();
 
     //prepares the log statement
-    $log = implode(' ', $calculator->logArrayFetch());
-    $logger = new Logger('Results');
-    $logger->pushHandler(new StreamHandler(__DIR__.'/file.log', Logger::DEBUG));
-    $logger->addInfo($log);
+    $calculator->logArrayStore();
+    $calculator->logResult();
 }

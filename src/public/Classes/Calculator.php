@@ -1,10 +1,14 @@
 <?php
 namespace pub\Classes;
 
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
+
 class Calculator
 {
     private $probFunction;
     private $inputs;
+    private $logArray;
 
     /** public Function getUserInputs() takes a parameter $inputs (which is the user entered values) and then stores
      * them in the calculator.
@@ -38,12 +42,24 @@ class Calculator
     }
 
     /** Function logArrayFetch() calls the Trait function logArray() from logArrayTrait which returns an array which is
-     * formatted for logging.
-     * @return mixed
+     * formatted for logging. This is stored locally for use in logResult.
+     *
+     * @return array
      */
-    public function logArrayFetch()
+    public function logArrayStore() :array
     {
-        return $this->probFunction->logArray();
+        return $this->logArray = $this->probFunction->logArray();
+    }
+
+    /**lFunction LogResult() takes the log array and passes it to monolog which stores it in file.log.
+     *
+     */
+    public function logResult() : void
+    {
+        $log = implode(' ', $this->logArray);
+        $logger = new Logger('Results');
+        $logger->pushHandler(new StreamHandler('file.log', Logger::DEBUG));
+        $logger->addInfo($log);
     }
 
 }
