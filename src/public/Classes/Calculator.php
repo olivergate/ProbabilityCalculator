@@ -8,7 +8,13 @@ class Calculator
     private $probFunction;
     private $inputs;
 
-    public function getUserInputs(array $inputs)
+    /** public Function getUserInputs() takes a paramter $inputs (which is the user entered values) and then stores
+     * them in the calculator.
+     *
+     * @param array $inputs
+     * @return array
+     */
+    public function getUserInputs(array $inputs) : array
     {
         return $this->inputs = $inputs;
     }
@@ -17,7 +23,7 @@ class Calculator
      *
      * @param $function
      *
-     * @return logArrayTrait returns an object with the trait logArrayTrait
+     * @return returns an object with the trait logArrayTrait
      */
     public function setFunction(string $function)
     {
@@ -33,6 +39,10 @@ class Calculator
         return $this->probFunction->getCalcResult();
     }
 
+    /** Function logArrayFetch() calls the Trait function logArray() from logArrayTrait which returns an array which is
+     * formatted for logging.
+     * @return mixed
+     */
     public function logArrayFetch()
     {
         return $this->probFunction->logArray();
