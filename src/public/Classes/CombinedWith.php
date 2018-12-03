@@ -5,7 +5,7 @@ namespace pub\Classes;
 use pub\Interfaces\getCalcResult;
 use pub\Interfaces\getInputs;
 
-class CombinedWith implements getCalcResult, getInputs
+class CombinedWith implements getCalcResult
 {
     use \pub\Traits\validateInputProbTrait;
     use \pub\Traits\logArrayTrait;
@@ -54,13 +54,5 @@ class CombinedWith implements getCalcResult, getInputs
         return $this->calcResult;
     }
 
-    /**getInputs() returns the array of inputs stored in the object.
-     *
-     * @return array
-     */
-    public function getInputs(): array
-    {
-        return $this->inputs;
-    }
 
 }

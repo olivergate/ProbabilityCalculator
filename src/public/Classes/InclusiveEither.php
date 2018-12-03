@@ -3,9 +3,8 @@
 namespace pub\Classes;
 
 use pub\Interfaces\getCalcResult;
-use pub\Interfaces\getInputs;
 
-class InclusiveEither implements getCalcResult, getInputs
+class InclusiveEither implements getCalcResult
 {
     use \pub\Traits\validateInputProbTrait;
     use \pub\Traits\logArrayTrait;
@@ -58,13 +57,5 @@ class InclusiveEither implements getCalcResult, getInputs
         return $this->calcResult;
     }
 
-    /**getInputs() returns the array of inputs stored in the object.
-     *
-     * @return array
-     */
-    public function getInputs(): array
-    {
-        return $this->inputs;
-    }
 
 }
