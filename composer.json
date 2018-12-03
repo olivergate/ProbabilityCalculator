@@ -6,6 +6,8 @@
     "psr-4": {
       "pub\\":"src/public"
     }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7"
   }
 }
-
