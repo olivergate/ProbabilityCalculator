@@ -56,6 +56,4 @@ class InclusiveEither implements getCalcResult
     {
         return $this->calcResult;
     }
-
-
 }

@@ -37,13 +37,6 @@ require_once 'src/public/crunch.php'
                 echo $result;
                 }
                 ?>
-
-
-            </div>
-        </div>
-        <div class="right_column">
-            <div class="log_book">
-
             </div>
         </div>
     </main>

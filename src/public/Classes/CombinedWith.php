@@ -53,6 +53,4 @@ class CombinedWith implements getCalcResult
     {
         return $this->calcResult;
     }
-
-
 }

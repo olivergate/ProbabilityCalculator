@@ -6,7 +6,7 @@ class Calculator
     private $probFunction;
     private $inputs;
 
-    /** public Function getUserInputs() takes a paramter $inputs (which is the user entered values) and then stores
+    /** public Function getUserInputs() takes a parameter $inputs (which is the user entered values) and then stores
      * them in the calculator.
      *
      * @param array $inputs
