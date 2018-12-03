@@ -1,8 +1,6 @@
 <?php
 namespace pub\Classes;
 
-use pub\Traits\logArrayTrait;
-
 class Calculator
 {
     private $probFunction;
